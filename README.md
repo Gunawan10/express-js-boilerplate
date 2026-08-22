@@ -781,9 +781,3 @@ Consistent Result Handling
         =
 Reusable Express Backend Foundation
 ```
-
----
-
-# 📄 License
-
-Add your preferred license here before distributing the boilerplate publicly.

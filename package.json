@@ -1,6 +1,32 @@
 {
   "name": "express-backend-template-v5-proper",
   "version": "1.0.0",
+  "description": "Modular Express.js backend boilerplate with pluggable infrastructure and feature-first architecture.",
   "type": "commonjs",
-  "main": "src/server.js"
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.900.0",
+    "@aws-sdk/client-ses": "^3.900.0",
+    "@aws-sdk/s3-request-presigner": "^3.900.0",
+    "axios": "^1.19.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.2.1",
+    "joi": "^18.0.1",
+    "knex": "^3.3.0",
+    "minio": "^8.0.6",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.5",
+    "postmark": "^4.0.5",
+    "redis": "^6.2.1",
+    "resend": "^6.0.0",
+    "sqlite3": "^6.0.1",
+    "zod": "^4.1.5"
+  }
 }

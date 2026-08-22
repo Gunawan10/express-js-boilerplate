@@ -22,6 +22,7 @@ app.use(
   })
 )
 
+app.use("/health", require("./resources/health/routes"))
 app.use("/users", require("./resources/users/routes"))
 app.use("/ai", require("./resources/ai/routes"))
 

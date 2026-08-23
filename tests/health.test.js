@@ -1,3 +1,6 @@
+jest.mock("../src/resources/users/routes", () => require("express").Router())
+jest.mock("../src/resources/ai/routes", () => require("express").Router())
+
 const request = require("supertest")
 const app = require("../src/app")
 

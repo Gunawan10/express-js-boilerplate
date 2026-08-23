@@ -5,7 +5,7 @@ jest.mock("../../../src/plugins/validator", () => ({
 }))
 
 jest.mock("../../../src/plugins/upload", () => ({
-  single: () => (req, res, next) => next()
+  single: () => () => (req, res, next) => next()
 }))
 
 jest.mock("../../../src/plugins/webhook", () => ({

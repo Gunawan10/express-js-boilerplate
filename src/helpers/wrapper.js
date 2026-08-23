@@ -1,5 +1,4 @@
 const { sendResponse, restApi } = require("./response")
-const webhook = require("../plugins/webhook")
 
 const wrapperController = (handler) => {
   return async (req, res) => {
@@ -8,6 +7,8 @@ const wrapperController = (handler) => {
 
       return sendResponse(res, result)
     } catch (error) {
+      const webhook = require("../plugins/webhook")
+
       await webhook.sendError({
         error,
         context: {

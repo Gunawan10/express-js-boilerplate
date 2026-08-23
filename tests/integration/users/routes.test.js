@@ -13,21 +13,27 @@ jest.mock("../../../src/plugins/webhook", () => ({
   sendError: jest.fn().mockResolvedValue(undefined)
 }))
 
-jest.mock("../../../src/resources/users/function", () => ({
-  create: jest.fn().mockResolvedValue({
-    success: "created",
-    data: { id: 1, name: "Gunawan" },
-    message: "User created successfully"
-  }),
-  getAll: jest.fn().mockResolvedValue({
-    success: "ok",
-    data: {
-      items: [{ id: 1, name: "Gunawan" }],
-      total: 1
-    },
-    message: "Success"
-  })
-}))
+jest.mock("../../../src/resources/users/function", () => {
+  const { Result } = jest.requireActual("../../../src/helpers/response")
+
+  return {
+    create: jest.fn().mockResolvedValue(
+      Result.created(
+        { id: 1, name: "Gunawan" },
+        "User created successfully"
+      )
+    ),
+    getAll: jest.fn().mockResolvedValue(
+      Result.ok(
+        {
+          items: [{ id: 1, name: "Gunawan" }],
+          total: 1
+        },
+        "Success"
+      )
+    )
+  }
+})
 
 const express = require("express")
 const request = require("supertest")
